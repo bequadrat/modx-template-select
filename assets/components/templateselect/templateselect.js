@@ -1,11 +1,6 @@
-/**
- * Created by chris on 07.02.15.
- */
-
 MODx.addListener('beforeLoadPage',function(url) {
    if(url.match(/resource\/create/) && !url.match(/template=/)) {
       var myId = Ext.id();
-      console.log(myId);
       var templateSelectWindow = new MODx.Window({
          resizable: false,
          modal: true,
@@ -49,4 +44,11 @@ MODx.addListener('beforeLoadPage',function(url) {
       templateSelectWindow.show();
       return false;
    };
+});
+
+document.addEventListener('DOMContentLoaded',function() {
+   document.querySelector('#new_resource a').addEventListener('click',function(e) {
+      e.preventDefault();
+      MODx.loadPage(this.getAttribute('href'));
+   });
 });
