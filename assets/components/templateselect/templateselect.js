@@ -10,6 +10,7 @@ MODx.addListener('beforeLoadPage',function(url) {
          collapsible: false,
          width: '400',
          title: templateSelectPrompt,
+         cls: 'template-select-prompt',
          /* title: _('choose'), */
          buttons: [{
             text: _('cancel'),
